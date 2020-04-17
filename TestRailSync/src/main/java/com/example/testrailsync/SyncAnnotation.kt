@@ -1,6 +1,6 @@
-package com.example.snapshottest.v1.testhelper
+package com.example.testrailsync
 
-@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
+@Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
 annotation class SyncAnnotation(val caseId: Int, val testDesc: String)
 
