@@ -1,4 +1,4 @@
-package com.example.test_project.v2
+package com.example.test_project.testrailsync
 
 import com.example.test_project.Utils
 import com.example.testrailsync.SyncAnnotation
