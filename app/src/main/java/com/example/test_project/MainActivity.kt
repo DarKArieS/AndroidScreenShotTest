@@ -1,4 +1,4 @@
-package com.example.snapshottest
+package com.example.test_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.snapshottest
+package com.example.test_project
 
 import android.os.Bundle
 import androidx.test.runner.AndroidJUnitRunner

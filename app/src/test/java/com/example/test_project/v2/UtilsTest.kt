@@ -1,6 +1,6 @@
-package com.example.snapshottest.v2
+package com.example.test_project.v2
 
-import com.example.snapshottest.Utils
+import com.example.test_project.Utils
 import com.example.testrailsync.SyncAnnotation
 import com.example.testrailsync.SyncClassRule
 import com.example.testrailsync.SyncCollector
