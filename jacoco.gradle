@@ -1,0 +1,42 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("../JacocoReport")
+}
+
+//ext {
+//    coverageSourceDirs = 'src/test/java'
+//}
+
+//android {
+//    testOptions {
+//        unitTests.all {
+//            jacoco {
+//                includeNoLocationClasses = true
+//                jacoco.excludes = ['jdk.internal.*']
+//            }
+//            jvmArgs '-noverify'
+//        }
+//    }
+//}
+
+task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+    group = 'verification'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+
+    def debugTree = fileTree(
+            dir: "../app/build/intermediates/javac/debug/classes/com" +
+                    "/example/test_project/javaClasses")
+    def kotlinDebugTree = fileTree(
+            dir: "../app/build/tmp/kotlin-classes/debug/com/example/test_project")
+    def mainSrc = "../app/src/main/java"
+
+    classDirectories.from = files([kotlinDebugTree], [debugTree])
+    sourceDirectories.from = files(mainSrc)
+    executionData.from = files("../app/build/jacoco/testDebugUnitTest.exec")
+}

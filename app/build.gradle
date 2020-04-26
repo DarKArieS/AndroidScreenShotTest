@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.facebook.testing.screenshot'
 apply plugin: 'shot'
+apply from: '../jacoco.gradle'
 
 android {
     compileSdkVersion 29
@@ -30,6 +31,10 @@ android {
         animationsDisabled = true
     }
 
+    lintOptions {
+        abortOnError false
+        lintConfig file("../lint.xml")
+    }
 }
 
 dependencies {

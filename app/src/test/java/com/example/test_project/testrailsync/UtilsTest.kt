@@ -33,7 +33,7 @@ class UtilsTest {
     fun `plus should be right!2`() {
         val result = Utils().plus(3, 4)
 
-        Assert.assertEquals(8, result)
+        Assert.assertEquals(7, result)
     }
 
 }
